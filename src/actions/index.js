@@ -10,7 +10,7 @@ export const loginSuccess = (jwt_token) => {
 export const loginError = (message) => {
     return {
         type: types.WARNING_NOTIFICATION,
-        notification_type: 'warning',
-        notification_message: message
+        kind: 'warning',
+        message: message
     }
 };

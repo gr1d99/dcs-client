@@ -1,7 +1,7 @@
 import * as types from './../constants/ActionTypes'
 
 const initialState = {
-    type: '',
+    kind: '',
     message: ''
 };
 
@@ -10,8 +10,8 @@ export default (state = initialState, action) => {
         case types.WARNING_NOTIFICATION:
             return {
                 ...state,
-                type: action.notification_type,
-                message: action.notification_message
+                kind: action.kind,
+                message: action.message
             };
         default:
             return state

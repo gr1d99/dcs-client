@@ -3,9 +3,7 @@ import * as types from './../constants/ActionTypes';
 
 describe('loginSuccess', () => {
     it('should create an action to authenticate user', function () {
-        const expectedAction = {
-            type: types.LOGIN_SUCCESS
-        };
+        const expectedAction = {type: types.LOGIN_SUCCESS};
         expect(actions.loginSuccess()).toEqual(expectedAction)
     });
 });
@@ -15,10 +13,9 @@ describe('loginError', () => {
         const error_message = 'Incorrect email or password';
         const expectedAction = {
             type: types.WARNING_NOTIFICATION,
-            notification_message: error_message,
-            notification_type: 'warning'
+            message: error_message,
+            kind: 'warning'};
 
-        };
         expect(actions.loginError(error_message)).toEqual(expectedAction)
     })
 });

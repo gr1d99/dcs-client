@@ -20,9 +20,7 @@ describe('async actions', () => {
 
         mockAxios.post.mockImplementationOnce(() =>
             Promise.resolve({
-                data: {
-                    jwt_token: jwt_token
-                }
+                data: {jwt_token: jwt_token}
             })
         );
 
@@ -39,16 +37,14 @@ describe('async actions', () => {
         const error_message = 'Incorrect email or password';
         const expectedAction = [{
             type: types.WARNING_NOTIFICATION,
-            notification_type: 'warning',
-            notification_message: 'Incorrect email or password'
+            kind: 'warning',
+            message: 'Incorrect email or password'
         }];
 
         mockAxios.post.mockImplementationOnce(() =>
             Promise.reject({
                 response: {
-                    data: {
-                        error: error_message
-                    }
+                    data: {error: error_message}
                 }
             })
         );
