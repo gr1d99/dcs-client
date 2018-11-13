@@ -8,7 +8,7 @@ import HomePage from '../components/Homepage';
 import Login from './auth/Login';
 import Alert from "../components/shared/Alert";
 
-class App extends Component {
+export class App extends Component {
     constructor(props, context){
         super(props);
         this.renderAlerts = this.renderAlerts.bind(this);

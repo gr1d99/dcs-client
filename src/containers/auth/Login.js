@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 
 import { loginUser } from "../../api/authentication";
 
-class Login extends React.Component {
+export class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = ({
@@ -43,11 +43,11 @@ class Login extends React.Component {
         if (this.props.logged_in) return <Redirect to='/' />;
         return (
             <div className='col-md-6 offset-md-3'>
-                <form className='login-form border border-dark p-2' onSubmit={this.handleOnSubmit}>
+                <form className='login-form border border-dark p-2' id='login-form' onSubmit={this.handleOnSubmit}>
                     <div className='form-group'>
                         <label htmlFor='email'>Email</label>
                         <input type='email'
-                               id='email'
+                               id='id_email'
                                className='form-control'
                                placeholder='you@example.com'
                                onChange={this.handleEmailOnChange}/>
@@ -55,7 +55,7 @@ class Login extends React.Component {
                     <div className='form-group'>
                         <label htmlFor='password'>Password</label>
                         <input type='password'
-                               id='password'
+                               id='id_password'
                                className='form-control'
                                onChange={this.handlePasswordOnChange}/>
                     </div>
