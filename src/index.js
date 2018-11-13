@@ -8,7 +8,7 @@ import thunkMiddleware from 'redux-thunk';
 
 import './assets/stylesheets/index.css';
 
-import App from './components/App';
+import App from './containers/App';
 
 import dcsReducers from './reducers';
 

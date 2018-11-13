@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Header from './common/Header';
-import HomePage from './Homepage';
-import Login from '../containers/auth/Login';
-import Alert from "./common/Alert";
+import Header from '../components/shared/Navbar';
+import HomePage from '../components/Homepage';
+import Login from './auth/Login';
+import Alert from "../components/shared/Alert";
 
 class App extends Component {
     constructor(props, context){
@@ -15,16 +15,16 @@ class App extends Component {
     }
 
     renderAlerts = () => {
-        const { type, message } = this.props.notification;
-        if (type && message){
-            return <Alert type={type} message={message}/>
+        const { kind, message } = this.props.notification;
+        if (kind && message){
+            return <Alert kind={kind} message={message}/>
         }
     };
 
     render() {
         return (
             <BrowserRouter>
-                <div className='gr1d99'>
+                <div className='dcs'>
                     <Header
                         auth={this.props.auth}
                     />
@@ -36,7 +36,7 @@ class App extends Component {
                 </div>
             </BrowserRouter>
         );
-      }
+    }
 }
 
 const mapStateToProps = ({auth, notification}) => {

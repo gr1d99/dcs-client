@@ -1,10 +1,9 @@
 import React from 'react';
 import alertTypes from './../../constants/AlertTypes';
 
-const Alert = ({type, message}) => {
-    if(type &&  message){
-        const alertProps = alertTypes[type].props;
-        console.log(alertProps.className, alertProps.role);
+const Alert = ({kind, message}) => {
+    if(kind &&  message){
+        const alertProps = alertTypes[kind].props;
         return (
             <div className={alertProps.className} role={alertProps.role}>
                 {message}

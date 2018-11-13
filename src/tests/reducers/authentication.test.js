@@ -1,7 +1,6 @@
 import authenticationReducer  from '../../reducers/authentication';
 import { LOGIN_SUCCESS } from './../../constants/ActionTypes';
 
-
 describe('authentication reducer', () => {
     it('should return the initial state', () => {
         const initialState = { logged_in: false, jwt_token: '' };
