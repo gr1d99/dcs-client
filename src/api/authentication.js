@@ -1,14 +1,16 @@
 import axios from 'axios';
+import {LOGIN_ENDPOINT} from './endpoints';
 
 import {
     loginSuccess,
     loginError
-} from "../actions";
+} from '../actions';
 
-const AUTH_URL = 'http://localhost:3000/auth/login';
+const env = process.env;
+const URL = `${env.REACT_APP_API_BASE_URL}${env.REACT_APP_API_VERSION}${LOGIN_ENDPOINT}`;
 
 export const loginUser = (email, password) => {
-    const request = axios.post(AUTH_URL, {
+    const request = axios.post(URL, {
         email: email,
         password: password
     });

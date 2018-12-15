@@ -28,9 +28,8 @@ describe('Navabar component', () => {
     it('should render protected links when user is authenticated', () => {
         const email = 'test@email.com'
         const jwt_token = jsonwebtoken.sign({email: email}, 'secret')
-        const props = {
-            logged_in: true,
-            jwt_token: jwt_token}
+        const props = {logged_in: true,
+                       jwt_token: jwt_token}
 
         const wrapper = mount(
             <BrowserRouter>

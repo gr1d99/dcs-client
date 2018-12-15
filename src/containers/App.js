@@ -10,7 +10,7 @@ import Alert from "../components/shared/Alert";
 
 class App extends Component {
     constructor(props, context){
-        super(props);
+        super(props, context);
         this.renderAlerts = this.renderAlerts.bind(this);
     }
 
